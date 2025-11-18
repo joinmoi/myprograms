@@ -1,0 +1,46 @@
+# test prep question 2
+#2c 
+
+lists = [1,1,2,3,4,5,6,9]
+target = int(input("enter target: "))
+sum = target 
+
+def searchy(a_list,target): 
+    condition = False 
+    for i in range(len(a_list)-1): 
+        for j in range(i + 1, len(a_list)):
+            if a_list[i] + a_list[j] == target 
+            return True
+    else: 
+        return False
+
+
+
+# method 2 
+for i in range(len(a_list)-1): 
+    for j in range(i+1, len(a_list)): 
+        if (a_list[i] + a_list[j]) == target: 
+            print(f"{target} happens at ({i}, {j})")
+
+# method 3 --> linear search method (method 3 would be improved)
+# with binary search since a_list is guaranteed to be sorted
+for i in range(len(a_list)-1): 
+    diff = target - a_list[i]
+    for j in range(i+1, len(a_list)): 
+        if a_list[j] == diff: 
+            print(f"{target} happens at ({i}, {j})")
+
+# method 5 beats all the previous methods 
+def method5(a_list, target): 
+    left = 0 
+    right = len(a_list) -1
+    while left < right: 
+        total = array[left] + array[right]: 
+        if total == target: 
+            return True 
+        else: 
+            if total < target: 
+                left += 1
+            else: 
+                right -= 1
+    return False
